@@ -1,0 +1,255 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Nov 10 22:26:17 2024
+# Process ID         : 1065295
+# Current directory  : /scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.runs/synth_1
+# Command line       : vivado -log kria_starter_kit_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source kria_starter_kit_wrapper.tcl
+# Log file           : /scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.runs/synth_1/kria_starter_kit_wrapper.vds
+# Journal file       : /scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.runs/synth_1/vivado.jou
+# Running On         : xcosswbld05
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04 LTS
+# Processor Detail   : Intel(R) Xeon(R) CPU E5-2690 v4 @ 2.60GHz
+# CPU Frequency      : 1200.000 MHz
+# CPU Physical cores : 28
+# CPU Logical cores  : 56
+# Host memory        : 270344 MB
+# Swap memory        : 6806 MB
+# Total Virtual      : 277150 MB
+# Available Virtual  : 258904 MB
+#-----------------------------------------------------------
+Sourcing tcl script '/home/xbrbbot/.Xilinx/Vivado/Vivado_init.tcl'
+445 Beta devices matching pattern found, 445 enabled.
+enable_beta_device: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1514.930 ; gain = 125.027 ; free physical = 115641 ; free virtual = 245473
+invalid command name "internal::enable_all_devices"
+    while executing
+"internal::enable_all_devices"
+    (file "/home/xbrbbot/.Xilinx/Vivado/Vivado_init.tcl" line 2)
+source kria_starter_kit_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2024.2_1110_1447/installs/lin64/Vivado/2024.2/data/ip'.
+INFO: [Project 1-5578] Found utility IPs instantiated in block design /scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.srcs/sources_1/bd/kria_starter_kit/kria_starter_kit.bd which have equivalent inline hdl with improved performance and reduced diskspace.
+It is recommended to migrate these utility IPs to inline hdl  using the command upgrade_project -migrate_to_inline_hdl.  The utility IPs may be deprecated in future releases.
+More information on inline hdl is available in UG994. 
+Command: synth_design -top kria_starter_kit_wrapper -part xck26-sfvc784-2LV-c
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xck26'
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1065392
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2711.309 ; gain = 118.688 ; free physical = 111695 ; free virtual = 241527
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'kria_starter_kit_wrapper' [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.srcs/sources_1/imports/hdl/kria_starter_kit_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'kria_starter_kit' [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/synth/kria_starter_kit.v:13]
+INFO: [Synth 8-6157] synthesizing module 'kria_starter_kit_xlslice_0_0' [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/ip/kria_starter_kit_xlslice_0_0/synth/kria_starter_kit_xlslice_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_4_xlslice' [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/ipshared/a97c/hdl/xlslice_v1_0_vl_rfs.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_4_xlslice' (0#1) [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/ipshared/a97c/hdl/xlslice_v1_0_vl_rfs.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'kria_starter_kit_xlslice_0_0' (0#1) [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/ip/kria_starter_kit_xlslice_0_0/synth/kria_starter_kit_xlslice_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'kria_starter_kit_zynq_ultra_ps_e_0_0' [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.runs/synth_1/.Xil/Vivado-1065295-xcosswbld05/realtime/kria_starter_kit_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kria_starter_kit_zynq_ultra_ps_e_0_0' (0#1) [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.runs/synth_1/.Xil/Vivado-1065295-xcosswbld05/realtime/kria_starter_kit_zynq_ultra_ps_e_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'emio_enet0_enet_tsu_timer_cnt' of module 'kria_starter_kit_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/synth/kria_starter_kit.v:24]
+WARNING: [Synth 8-7071] port 'pl_resetn0' of module 'kria_starter_kit_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/synth/kria_starter_kit.v:24]
+WARNING: [Synth 8-7071] port 'pl_clk0' of module 'kria_starter_kit_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/synth/kria_starter_kit.v:24]
+WARNING: [Synth 8-7071] port 'pl_clk1' of module 'kria_starter_kit_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/synth/kria_starter_kit.v:24]
+WARNING: [Synth 8-7023] instance 'zynq_ultra_ps_e_0' of module 'kria_starter_kit_zynq_ultra_ps_e_0_0' has 6 connections declared, but only 2 given [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/synth/kria_starter_kit.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'kria_starter_kit' (0#1) [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/synth/kria_starter_kit.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'kria_starter_kit_wrapper' (0#1) [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.srcs/sources_1/imports/hdl/kria_starter_kit_wrapper.v:13]
+WARNING: [Synth 8-7129] Port Din[1] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[0] in module xlslice_v1_0_4_xlslice is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2781.277 ; gain = 188.656 ; free physical = 111432 ; free virtual = 241266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2781.277 ; gain = 188.656 ; free physical = 111431 ; free virtual = 241266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2781.277 ; gain = 188.656 ; free physical = 111431 ; free virtual = 241266
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2781.277 ; gain = 0.000 ; free physical = 111431 ; free virtual = 241266
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/ip/kria_starter_kit_zynq_ultra_ps_e_0_0/kria_starter_kit_zynq_ultra_ps_e_0_0/kria_starter_kit_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'kria_starter_kit_i/zynq_ultra_ps_e_0'
+create_clock: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2784.246 ; gain = 0.000 ; free physical = 111418 ; free virtual = 241252
+Finished Parsing XDC File [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.gen/sources_1/bd/kria_starter_kit/ip/kria_starter_kit_zynq_ultra_ps_e_0_0/kria_starter_kit_zynq_ultra_ps_e_0_0/kria_starter_kit_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'kria_starter_kit_i/zynq_ultra_ps_e_0'
+Parsing XDC File [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.srcs/constrs_1/imports/xdc/default.xdc]
+Finished Parsing XDC File [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.srcs/constrs_1/imports/xdc/default.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.srcs/constrs_1/imports/xdc/default.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/kria_starter_kit_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/kria_starter_kit_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2784.246 ; gain = 0.000 ; free physical = 111420 ; free virtual = 241255
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2784.246 ; gain = 0.000 ; free physical = 111419 ; free virtual = 241255
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2784.246 ; gain = 191.625 ; free physical = 111412 ; free virtual = 241249
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xck26-sfvc784-2LV-c
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2784.246 ; gain = 191.625 ; free physical = 111412 ; free virtual = 241249
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for kria_starter_kit_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kria_starter_kit_i/zynq_ultra_ps_e_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kria_starter_kit_i/xlslice_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2784.246 ; gain = 191.625 ; free physical = 111412 ; free virtual = 241248
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2784.246 ; gain = 191.625 ; free physical = 111409 ; free virtual = 241249
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1248 (col length:96)
+BRAMs: 288 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port Din[1] in module kria_starter_kit_xlslice_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[0] in module kria_starter_kit_xlslice_0_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2784.246 ; gain = 191.625 ; free physical = 111400 ; free virtual = 241250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 3438.820 ; gain = 846.199 ; free physical = 109699 ; free virtual = 239549
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 3438.820 ; gain = 846.199 ; free physical = 109698 ; free virtual = 239549
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 3447.836 ; gain = 855.215 ; free physical = 109678 ; free virtual = 239528
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3618.648 ; gain = 1026.027 ; free physical = 109244 ; free virtual = 239095
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3618.648 ; gain = 1026.027 ; free physical = 109244 ; free virtual = 239095
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3618.648 ; gain = 1026.027 ; free physical = 109244 ; free virtual = 239094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3618.648 ; gain = 1026.027 ; free physical = 109244 ; free virtual = 239094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3618.648 ; gain = 1026.027 ; free physical = 109244 ; free virtual = 239094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3618.648 ; gain = 1026.027 ; free physical = 109244 ; free virtual = 239094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-------------------------------------+----------+
+|      |BlackBox name                        |Instances |
++------+-------------------------------------+----------+
+|1     |kria_starter_kit_zynq_ultra_ps_e_0_0 |         1|
++------+-------------------------------------+----------+
+
+Report Cell Usage: 
++------+-----------------------------------+------+
+|      |Cell                               |Count |
++------+-----------------------------------+------+
+|1     |kria_starter_kit_zynq_ultra_ps_e_0 |     1|
+|2     |OBUF                               |     1|
++------+-----------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3618.648 ; gain = 1026.027 ; free physical = 109243 ; free virtual = 239094
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3618.648 ; gain = 1023.059 ; free physical = 109233 ; free virtual = 239083
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 3618.648 ; gain = 1026.027 ; free physical = 109233 ; free virtual = 239083
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3618.648 ; gain = 0.000 ; free physical = 109394 ; free virtual = 239244
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3618.648 ; gain = 0.000 ; free physical = 109718 ; free virtual = 239569
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 503baa46
+INFO: [Common 17-83] Releasing license: Synthesis
+28 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 3618.648 ; gain = 2012.180 ; free physical = 109719 ; free virtual = 239569
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2624.582; main = 2624.582; forked = 203.762
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4154.312; main = 3544.820; forked = 896.324
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3618.648 ; gain = 0.000 ; free physical = 109719 ; free virtual = 239569
+INFO: [Common 17-1381] The checkpoint '/scratch/jenkins-BUILDS-hw_designs_builds-2024.2_amd-yocto-hw-platforms-95_kr260_base/kria_base/k26/kr260_base/hw_project/kr260_base/kr260_base.runs/synth_1/kria_starter_kit_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file kria_starter_kit_wrapper_utilization_synth.rpt -pb kria_starter_kit_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 10 22:27:44 2024...

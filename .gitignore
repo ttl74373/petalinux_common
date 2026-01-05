@@ -1,0 +1,12 @@
+Kria_KR260/kr260-sdt-2024-2/.petalinux
+Kria_KR260/kr260-sdt-2024-2/!.petalinux/metadata
+Kria_KR260/kr260-sdt-2024-2/build/
+Kria_KR260/kr260-sdt-2024-2/images/linux
+Kria_KR260/kr260-sdt-2024-2/pre-built/linux
+Kria_KR260/kr260-sdt-2024-2/components/plnx-workspace/
+Kria_KR260/kr260-sdt-2024-2/components/yocto/
+Kria_KR260/kr260-sdt-2024-2/*/*/config.old
+Kria_KR260/kr260-sdt-2024-2/*/*/rootfs_config.old
+Kria_KR260/kr260-sdt-2024-2/*.o
+Kria_KR260/kr260-sdt-2024-2/*.log
+Kria_KR260/kr260-sdt-2024-2/*.jou
