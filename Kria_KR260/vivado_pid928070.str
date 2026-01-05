@@ -5243,3 +5243,6 @@ dismissDialog("Re-customize IP"); // m (dialog93)
 // TclEventType: FILE_SET_CHANGE
 // Elapsed time: 78416 seconds
 closeView(PAResourceOtoP.PAViews_CODE, "Code"); // J (PAResourceOtoP.PAViews_CODE, PlanAheadTabCode)
+// Elapsed time: 773 seconds
+closeMainWindow("Kria_KR260 - [/home/randy/projects/Kria_KR260/Kria_KR260.xpr] - Vivado 2024.2"); // G (MainFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXIT
