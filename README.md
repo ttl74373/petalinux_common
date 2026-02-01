@@ -28,7 +28,7 @@ cd kr260-sdt-2024-2
 ```
 * Import the .xsa
 ```
-time petalinux-config --get-hw-description ../
+time petalinux-config --get-hw-description ../Kria_KR260_boardaware3
 ```
 * Set tftpdir in petalinux config tui
 ```

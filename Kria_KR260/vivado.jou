@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Sun Jan  4 19:48:33 2026
-# Process ID         : 1798286
+# Start of session at: Sun Jan  4 20:59:31 2026
+# Process ID         : 1866991
 # Current directory  : /home/randy/projects/petalinux_common/Kria_KR260
 # Command line       : vivado
 # Log file           : /home/randy/projects/petalinux_common/Kria_KR260/vivado.log
@@ -13,15 +13,326 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : 13th Gen Intel(R) Core(TM) i7-1355U
-# CPU Frequency      : 1322.824 MHz
+# CPU Frequency      : 3413.799 MHz
 # CPU Physical cores : 10
 # CPU Logical cores  : 12
 # Host memory        : 67126 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 69273 MB
-# Available Virtual  : 54924 MB
+# Available Virtual  : 55014 MB
 #-----------------------------------------------------------
 start_gui
 open_project /home/randy/projects/petalinux_common/Kria_KR260/Kria_KR260.xpr
 update_compile_order -fileset sources_1
 open_bd_design {/home/randy/projects/petalinux_common/Kria_KR260/Kria_KR260.srcs/sources_1/bd/kria_bd/kria_bd.bd}
+validate_bd_design -force
+pwd
+write_bd_tcl -force Kria_KR260.tcl
+write_bd_tcl -force scripts/Kria_KR260.tcl
+pwd
+cd scripts
+ls
+ls *.tcl
+pwd
+ls
+write_project_tcl -force Kria_KR260.tcl
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_0/clk_out1 (99 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_0/clk_out1 (99 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_LPD} Slave {/axi_gpio_0/S_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
+endgroup
+validate_bd_design
+save_bd_design
+validate_bd_design -force
+pwd
+write_project_tcl -force Kria_KR260.tcl
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+close_project
+create_project project_1 /home/randy/projects/petalinux_common/Kria_KR260_boardaware -part xck26-sfvc784-2LV-c
+set_property board_part xilinx.com:kr260_som:part0:1.1 [current_project]
+set_property target_language VHDL [current_project]
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+set_property platform.extensible true [current_project]
+close_project
+open_project /home/randy/projects/petalinux_common/Kria_KR260/Kria_KR260.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/randy/projects/petalinux_common/Kria_KR260/Kria_KR260.srcs/sources_1/bd/kria_bd/kria_bd.bd}
+close_project
+create_project project_1 /home/randy/projects/petalinux_common/Kria_KR260_boardaware2 -part xck26-sfvc784-2LV-c
+set_property board_part xilinx.com:kr260_som:part0:1.1 [current_project]
+set_property board_connections {som240_1_connector xilinx.com:kr260_carrier:som240_2_connector:1.1 som240_2_connector xilinx.com:kr260_carrier:som240_1_connector:1.1} [current_project]
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.5 zynq_ultra_ps_e_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:zynq_ultra_ps_e -config {apply_board_preset "1" }  [get_bd_cells zynq_ultra_ps_e_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_intc:4.1 axi_intc_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
+endgroup
+set_property -dict [list \
+  CONFIG.CLKOUT2_JITTER {102.086} \
+  CONFIG.CLKOUT2_PHASE_ERROR {87.180} \
+  CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200.000} \
+  CONFIG.CLKOUT2_USED {true} \
+  CONFIG.MMCM_CLKOUT1_DIVIDE {6} \
+  CONFIG.NUM_OUT_CLKS {2} \
+] [get_bd_cells clk_wiz_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_0/clk_out2 (200 MHz)} Clk_slave {/clk_wiz_0/clk_out2 (200 MHz)} Clk_xbar {/clk_wiz_0/clk_out2 (200 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/axi_intc_0/s_axi} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_intc_0/s_axi]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {Custom} Manual_Source {Auto}}  [get_bd_pins clk_wiz_0/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {Custom} Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz_0/reset]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {Custom} Manual_Source {Auto}}  [get_bd_pins proc_sys_reset_0/ext_reset_in]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/clk_wiz_0/clk_out2 (200 MHz)} Clk_xbar {/clk_wiz_0/clk_out2 (200 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM1_FPD} Slave {/axi_intc_0/s_axi} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM1_FPD]
+startgroup
+set_property -dict [list \
+  CONFIG.PSU__USE__M_AXI_GP0 {0} \
+  CONFIG.PSU__USE__M_AXI_GP1 {0} \
+  CONFIG.PSU__USE__M_AXI_GP2 {1} \
+] [get_bd_cells zynq_ultra_ps_e_0]
+delete_bd_objs [get_bd_intf_nets zynq_ultra_ps_e_0_M_AXI_HPM0_FPD] [get_bd_intf_nets zynq_ultra_ps_e_0_M_AXI_HPM1_FPD]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_0/clk_out2 (200 MHz)} Clk_slave {/clk_wiz_0/clk_out2 (200 MHz)} Clk_xbar {/clk_wiz_0/clk_out2 (200 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_LPD} Slave {/axi_intc_0/s_axi} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_LPD]
+close_project
+create_project project_1 /home/randy/projects/petalinux_common/Kria_KR260_boardaware3 -part xck26-sfvc784-2LV-c
+set_property board_part xilinx.com:kr260_som:part0:1.1 [current_project]
+set_property board_connections {som240_1_connector xilinx.com:kr260_carrier:som240_2_connector:1.1 som240_2_connector xilinx.com:kr260_carrier:som240_1_connector:1.1} [current_project]
+set_property target_language VHDL [current_project]
+set_property platform.extensible true [current_project]
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.5 zynq_ultra_ps_e_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_intc:4.1 axi_intc_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0
+endgroup
+set_property -dict [list \
+  CONFIG.CLKOUT2_JITTER {102.086} \
+  CONFIG.CLKOUT2_PHASE_ERROR {87.180} \
+  CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200.000} \
+  CONFIG.CLKOUT2_USED {true} \
+  CONFIG.MMCM_CLKOUT1_DIVIDE {6} \
+  CONFIG.NUM_OUT_CLKS {2} \
+  CONFIG.RESET_PORT {resetn} \
+  CONFIG.RESET_TYPE {ACTIVE_LOW} \
+] [get_bd_cells clk_wiz_0]
+apply_bd_automation -rule xilinx.com:bd_rule:zynq_ultra_ps_e -config {apply_board_preset "1" }  [get_bd_cells zynq_ultra_ps_e_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_0/clk_out2 (200 MHz)} Clk_slave {/clk_wiz_0/clk_out2 (200 MHz)} Clk_xbar {/clk_wiz_0/clk_out2 (200 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/axi_intc_0/s_axi} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_intc_0/s_axi]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {Custom} Manual_Source {Auto}}  [get_bd_pins clk_wiz_0/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {Custom} Manual_Source {/zynq_ultra_ps_e_0/pl_resetn0 (ACTIVE_LOW)}}  [get_bd_pins clk_wiz_0/resetn]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {Custom} Manual_Source {/zynq_ultra_ps_e_0/pl_resetn0 (ACTIVE_LOW)}}  [get_bd_pins proc_sys_reset_0/ext_reset_in]
+endgroup
+regenerate_bd_layout
+startgroup
+set_property CONFIG.C_IRQ_CONNECTION {1} [get_bd_cells axi_intc_0]
+endgroup
+connect_bd_net [get_bd_pins axi_intc_0/irq] [get_bd_pins zynq_ultra_ps_e_0/pl_ps_irq0]
+startgroup
+set_property -dict [list \
+  CONFIG.PSU__USE__M_AXI_GP0 {0} \
+  CONFIG.PSU__USE__M_AXI_GP1 {0} \
+  CONFIG.PSU__USE__M_AXI_GP2 {1} \
+] [get_bd_cells zynq_ultra_ps_e_0]
+delete_bd_objs [get_bd_intf_nets zynq_ultra_ps_e_0_M_AXI_HPM0_FPD]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/clk_wiz_0/clk_out2 (200 MHz)} Clk_xbar {/clk_wiz_0/clk_out2 (200 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_LPD} Slave {/axi_intc_0/s_axi} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_LPD]
+set_property platform.vendor {} [current_project]
+set_property platform.board_id {} [current_project]
+set_property platform.name {myplatform} [current_project]
+set_property platform.version {} [current_project]
+set_property pfm_name {myplatform} [get_files -all {design_1.bd}]
+set_property platform.vendor {vendor} [current_project]
+set_property platform.board_id {lib} [current_project]
+set_property platform.version {1.0} [current_project]
+set_property pfm_name {vendor:lib:myplatform:1.0} [get_files -all {design_1.bd}]
+set_property PFM.CLOCK {clk_out1 {id "1" is_default "false" proc_sys_reset "" status "fixed" freq_hz "100000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.CLOCK {clk_out1 {id "1" is_default "true" proc_sys_reset "" status "fixed" freq_hz "100000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.CLOCK {pl_clk0 {id "0" is_default "false" proc_sys_reset "" status "fixed" freq_hz "99999001"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.CLOCK {} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.CLOCK {clk_out1 {id "1" is_default "true" proc_sys_reset "" status "fixed" freq_hz "100000000"} clk_out2 {id "2" is_default "false" proc_sys_reset "/proc_sys_reset_0" status "fixed" freq_hz "200000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.CLOCK {clock_rtl {id "4" is_default "false" proc_sys_reset "" status "fixed" freq_hz "100000000"}} [get_bd_ports /clock_rtl]
+set_property PFM.CLOCK {clock_rtl {id "4" is_default "true" proc_sys_reset "" status "fixed" freq_hz "100000000"}} [get_bd_ports /clock_rtl]
+set_property PFM.CLOCK {clk_out1 {id "1" is_default "false" proc_sys_reset "" status "fixed" freq_hz "100000000"} clk_out2 {id "2" is_default "false" proc_sys_reset "/proc_sys_reset_0" status "fixed" freq_hz "200000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.CLOCK {pl_clk0 {id "0" is_default "false" proc_sys_reset "" status "fixed" freq_hz "99999001"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.CLOCK {} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.CLOCK {} [get_bd_ports /clock_rtl]
+set_property PFM.CLOCK {clock_rtl {id "4" is_default "false" proc_sys_reset "" status "fixed" freq_hz "100000000"}} [get_bd_ports /clock_rtl]
+set_property PFM.CLOCK {} [get_bd_ports /clock_rtl]
+set_property PFM.CLOCK {clk_out1 {id "1" is_default "false" proc_sys_reset "" status "fixed" freq_hz "100000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.CLOCK {clk_out1 {id "1" is_default "true" proc_sys_reset "" status "fixed" freq_hz "100000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.CLOCK {clk_out1 {id "1" is_default "true" proc_sys_reset "" status "fixed" freq_hz "100000000"} clk_out2 {id "2" is_default "false" proc_sys_reset "/proc_sys_reset_0" status "fixed" freq_hz "200000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.CLOCK {clk_out2 {id "2" is_default "false" proc_sys_reset "/proc_sys_reset_0" status "fixed" freq_hz "200000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.CLOCK {clk_out2 {id "2" is_default "true" proc_sys_reset "/proc_sys_reset_0" status "fixed" freq_hz "200000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} M_AXI_HPM1_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} M_AXI_HPM1_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} M_AXI_HPM1_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} M_AXI_HPM1_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP2_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} M_AXI_HPM1_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP2_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP3_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} M_AXI_HPM1_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HPC0_FPD {memport "S_AXI_HPC" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP2_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP3_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} M_AXI_HPM1_FPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HPC0_FPD {memport "S_AXI_HPC" sptag "" memory "" is_range "false"} S_AXI_HPC1_FPD {memport "S_AXI_HPC" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP2_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP3_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+validate_bd_design
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+apply_board_connection -board_interface "som240_1_connector_gem3_led" -ip_intf "axi_gpio_0/GPIO" -diagram "design_1" 
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (99 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_0/clk_out2 (200 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_LPD} Slave {/axi_gpio_0/S_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+set_property board_part xilinx.com:kr260_som:part0:1.1 [current_project]
+set_property board_connections {som240_1_connector xilinx.com:kr260_carrier:som240_1_connector:1.1 som240_2_connector xilinx.com:kr260_carrier:som240_2_connector:1.1} [get_projects project_1]
+set_property board_part xilinx.com:kr260_som:part0:1.1 [current_project]
+set_property board_connections {som240_1_connector xilinx.com:kr260_carrier:som240_1_connector:1.1 som240_2_connector xilinx.com:kr260_carrier:som240_2_connector:1.1} [get_projects project_1]
+delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO]
+delete_bd_objs [get_bd_intf_ports som240_1_connector_gem3_led]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1
+apply_board_connection -board_interface "som240_1_connector_pmod1_gpio" -ip_intf "axi_gpio_1/GPIO" -diagram "design_1" 
+endgroup
+delete_bd_objs [get_bd_intf_nets axi_smc_M01_AXI] [get_bd_cells axi_gpio_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (99 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_0/clk_out2 (200 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_LPD} Slave {/axi_gpio_1/S_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins axi_gpio_1/S_AXI]
+save_bd_design
+validate_bd_design
+report_ip_status
+validate_bd_design
+report_ip_status
+report_ip_status -name ip_status 
+startgroup
+delete_bd_objs [get_bd_intf_nets axi_smc_M01_AXI] [get_bd_intf_nets axi_smc_M00_AXI] [get_bd_intf_nets zynq_ultra_ps_e_0_M_AXI_HPM0_LPD] [get_bd_intf_nets axi_gpio_1_GPIO]
+delete_bd_objs [get_bd_nets clk_wiz_0_clk_out2] [get_bd_nets proc_sys_reset_0_peripheral_aresetn] [get_bd_nets zynq_ultra_ps_e_0_pl_resetn0] [get_bd_nets clk_wiz_0_locked] [get_bd_nets axi_intc_0_irq] [get_bd_nets zynq_ultra_ps_e_0_pl_clk0] [get_bd_nets clock_rtl_1]
+delete_bd_objs [get_bd_cells axi_smc] [get_bd_cells zynq_ultra_ps_e_0] [get_bd_cells axi_intc_0] [get_bd_cells proc_sys_reset_0] [get_bd_cells axi_gpio_1] [get_bd_cells clk_wiz_0]
+delete_bd_objs [get_bd_ports clock_rtl]
+delete_bd_objs [get_bd_intf_ports som240_1_connector_pmod1_gpio]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.5 zynq_ultra_ps_e_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+apply_board_connection -board_interface "som240_1_connector_pmod1_gpio" -ip_intf "axi_gpio_0/GPIO" -diagram "design_1" 
+endgroup
+set_property -dict [list \
+  CONFIG.RESET_PORT {resetn} \
+  CONFIG.RESET_TYPE {ACTIVE_LOW} \
+] [get_bd_cells clk_wiz_0]
+apply_bd_automation -rule xilinx.com:bd_rule:zynq_ultra_ps_e -config {apply_board_preset "1" }  [get_bd_cells zynq_ultra_ps_e_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_0/clk_out1 (100 MHz)} Clk_slave {/clk_wiz_0/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_0/clk_out1 (100 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/axi_gpio_0/S_AXI} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {Custom} Manual_Source {Auto}}  [get_bd_pins clk_wiz_0/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {Custom} Manual_Source {/zynq_ultra_ps_e_0/pl_resetn0 (ACTIVE_LOW)}}  [get_bd_pins clk_wiz_0/resetn]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {Custom} Manual_Source {/zynq_ultra_ps_e_0/pl_resetn0 (ACTIVE_LOW)}}  [get_bd_pins proc_sys_reset_0/ext_reset_in]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_0/clk_out1 (100 MHz)} Clk_slave {/clk_wiz_0/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_0/clk_out1 (100 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM1_FPD} Slave {/axi_gpio_0/S_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM1_FPD]
+set_property PFM.CLOCK {clk_out1 {id "6" is_default "false" proc_sys_reset "/proc_sys_reset_0" status "fixed" freq_hz "100000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.CLOCK {clk_out1 {id "6" is_default "true" proc_sys_reset "/proc_sys_reset_0" status "fixed" freq_hz "100000000"}} [get_bd_cells /clk_wiz_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_LPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_LPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_LPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_LPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP2_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_LPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP2_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP3_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_LPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HPC0_FPD {memport "S_AXI_HPC" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP2_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP3_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+set_property PFM.AXI_PORT {M_AXI_HPM0_LPD {memport "M_AXI_GP" sptag "" memory "" is_range "false"} S_AXI_HPC0_FPD {memport "S_AXI_HPC" sptag "" memory "" is_range "false"} S_AXI_HPC1_FPD {memport "S_AXI_HPC" sptag "" memory "" is_range "false"} S_AXI_HP0_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP1_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP2_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"} S_AXI_HP3_FPD {memport "S_AXI_HP" sptag "" memory "" is_range "false"}} [get_bd_cells /zynq_ultra_ps_e_0]
+validate_bd_design
+delete_bd_objs [get_bd_nets clock_rtl_1]
+connect_bd_net [get_bd_pins zynq_ultra_ps_e_0/pl_clk0] [get_bd_pins clk_wiz_0/clk_in1]
+save_bd_design
+validate_bd_design
+delete_bd_objs [get_bd_ports clock_rtl]
+save_bd_design
+validate_bd_design
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+generate_target all [get_files  /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_zynq_ultra_ps_e_0_1] }
+catch { config_ip_cache -export [get_ips -all design_1_clk_wiz_0_1] }
+catch { config_ip_cache -export [get_ips -all design_1_proc_sys_reset_0_1] }
+catch { config_ip_cache -export [get_ips -all design_1_axi_gpio_0_1] }
+catch { config_ip_cache -export [get_ips -all design_1_axi_smc_1] }
+export_ip_user_files -of_objects [get_files /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_axi_gpio_0_1_synth_1 design_1_axi_smc_1_synth_1 design_1_clk_wiz_0_1_synth_1 design_1_proc_sys_reset_0_1_synth_1 design_1_zynq_ultra_ps_e_0_1_synth_1 -jobs 12
+wait_on_run design_1_axi_gpio_0_1_synth_1
+wait_on_run design_1_axi_smc_1_synth_1
+wait_on_run design_1_clk_wiz_0_1_synth_1
+wait_on_run design_1_proc_sys_reset_0_1_synth_1
+wait_on_run design_1_zynq_ultra_ps_e_0_1_synth_1
+export_simulation -lib_map_path [list {modelsim=/home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.cache/compile_simlib/modelsim} {questa=/home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.cache/compile_simlib/questa} {xcelium=/home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.cache/compile_simlib/xcelium} {vcs=/home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.cache/compile_simlib/vcs} {riviera=/home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.cache/compile_simlib/riviera}] -of_objects [get_files /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.ip_user_files/sim_scripts -ip_user_files_dir /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.ip_user_files -ipstatic_source_dir /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+make_wrapper -files [get_files /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_intc:4.1 axi_intc_0
+endgroup
+set_property CONFIG.C_IRQ_CONNECTION {1} [get_bd_cells axi_intc_0]
+connect_bd_net [get_bd_pins axi_intc_0/irq] [get_bd_pins zynq_ultra_ps_e_0/pl_ps_irq0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_0/clk_out1 (99 MHz)} Clk_slave {/clk_wiz_0/clk_out1 (99 MHz)} Clk_xbar {/clk_wiz_0/clk_out1 (99 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/axi_intc_0/s_axi} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins axi_intc_0/s_axi]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins axi_intc_0/intr]
+save_bd_design
+validate_bd_design
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+reset_run synth_1
+reset_run design_1_axi_smc_1_synth_1
+reset_run design_1_axi_intc_0_0_synth_1
+report_ip_status -name ip_status 
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+regenerate_bd_layout
+reset_run synth_1
+reset_run design_1_axi_smc_1_synth_1
+reset_run design_1_axi_intc_0_0_synth_1
+startgroup
+set_property -dict [list \
+  CONFIG.PSU__USE__M_AXI_GP0 {0} \
+  CONFIG.PSU__USE__M_AXI_GP1 {0} \
+  CONFIG.PSU__USE__M_AXI_GP2 {1} \
+] [get_bd_cells zynq_ultra_ps_e_0]
+delete_bd_objs [get_bd_intf_nets zynq_ultra_ps_e_0_M_AXI_HPM0_FPD] [get_bd_intf_nets zynq_ultra_ps_e_0_M_AXI_HPM1_FPD]
+endgroup
+validate_bd_design
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_0/clk_out1 (99 MHz)} Clk_slave {/clk_wiz_0/clk_out1 (99 MHz)} Clk_xbar {/clk_wiz_0/clk_out1 (99 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_LPD} Slave {/axi_gpio_0/S_AXI} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM0_LPD]
+validate_bd_design
+save_bd_design
+reset_run design_1_zynq_ultra_ps_e_0_1_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+set_property pfm_name {vendor:lib:myplatform:1.0} [get_files -all {/home/randy/projects/petalinux_common/Kria_KR260_boardaware3/project_1.srcs/sources_1/bd/design_1/design_1.bd}]
+set_property platform.design_intent.embedded {true} [current_project]
+set_property platform.design_intent.datacenter {false} [current_project]
+set_property platform.design_intent.server_managed {false} [current_project]
+set_property platform.design_intent.external_host {false} [current_project]
+set_property platform.default_output_type {sd_card} [current_project]
+set_property platform.uses_pr {false} [current_project]
+write_hw_platform -hw -include_bit -force -file /home/randy/projects/petalinux_common/Kria_KR260_boardaware3/design_1_wrapper.xsa

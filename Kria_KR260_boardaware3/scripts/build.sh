@@ -1,0 +1,1 @@
+vivado -mode batch -source $DIR_PETALINUX_COMMON/Kria_KR260_boardaware3/scripts/build.tcl -notrace
