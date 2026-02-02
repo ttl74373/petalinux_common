@@ -17,14 +17,15 @@ sudo chmod -R 777 /var/lib/tftpboot/Kria_KR260
 ```
 ### Install tools
 * Download and install Vivado and PetaLinux 2024.2 and BSP
-### Build PetaLinux project
-* Create PetaLinux project
+###  Build Vivado project
 ```
-source /opt/Xilinx/Vivado/2024.2/.settings64-Vivado.sh
-source /opt/PetaLinux/settings.sh
-cd ~/projects/Kria_KR260/
-time petalinux-create -t project -s ~/Downloads/xilinx-kr260-starterkit-v2024.2-12072024.bsp --name kr260-sdt-2024-2
-cd kr260-sdt-2024-2
+setupProj_petalinux_common
+build # Est time = 60 seconds
+```
+###  Build PetaLinux project
+```
+setupProj_petalinux_common
+create_petalinux_project # Est time = 60 seconds
 ```
 * Import the .xsa
 ```

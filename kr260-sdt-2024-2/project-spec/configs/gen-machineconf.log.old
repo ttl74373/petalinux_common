@@ -1,290 +1,41 @@
-2026-01-04 21:41:54,668 - [INFO] Getting Platform info from HW file
-2026-01-04 21:41:54,668 - [DEBUG] Using the soc_family specified by user:zynqmp
-2026-01-04 21:41:54,669 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /opt/PetaLinux/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/configs -f --enhanced   -i /opt/PetaLinux/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-machine-name.dts /home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/hw-description/system-top.dts 
-2026-01-04 21:41:55,633 - [DEBUG] 
-xlnx-zynqmp-smk-k26-rev2 xck26 ZynqMP SMK-K26 Rev2/1/B/A
+2026-02-02 00:25:38,424 - [DEBUG] Using xsct from : /opt/PetaLinux/components/xsct/bin/xsct
+2026-02-02 00:25:38,424 - [INFO] Getting Platform info from HW file
+2026-02-02 00:25:38,424 - [DEBUG] Using the soc_family specified by user:zynqmp
+2026-02-02 00:25:38,506 - [DEBUG] Hardware Configuration:
+2026-02-02 00:25:38,506 - [DEBUG] MACHINE     = "None"
+2026-02-02 00:25:38,506 - [DEBUG] DEVICE_ID   = "xck26"
+2026-02-02 00:25:38,506 - [DEBUG] SOC_FAMILY  = "zynqmp"
+2026-02-02 00:25:38,506 - [DEBUG] SOC_VARIANT = "ev"
+2026-02-02 00:25:38,506 - [INFO] Menuconfig project
+2026-02-02 00:25:38,506 - [DEBUG] Running CMD: env KCONFIG_CONFIG=/home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/configs/config mconf -s /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/configs/configs/Kconfig
+2026-02-02 00:25:52,467 - [DEBUG] xsct -sdx -nodisp /home/randy/projects/petalinux_common/kr260-sdt-2024-2/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/petalinux_hsm.tcl get_flash_width_parts /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/configs/config /home/randy/projects/petalinux_common/kr260-sdt-2024-2/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/data/ipinfo.yaml /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/hw-description/system.xsa /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/configs/flash_parts.txt
+2026-02-02 00:25:57,020 - [DEBUG] 
+
+****** Software Commandline Tool (XSCT) v2024.2.0
+  **** SW Build 5233591 on Sat Nov 02 20:05:54 MDT 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Warning: XSCT is deprecated and will be removed in future releases.
+We recommend using the new Python command-line tool for project management and debugging:
+- Run "vitis -i" for interactive mode.
+- Run "vitis -s <script>" for script mode.
+WARNING: sdtgen package cannot be loaded. System Device tree commands will not 
+ be available
+
+WARNING: Failed in finding /opt/PetaLinux/components/xsct/data/system-device-tree-xlnx/device_tree/data/device_tree.tcl path.
+
+
+2026-02-02 00:25:57,024 - [INFO] Generating kconfig for rootfs
+2026-02-02 00:25:57,024 - [DEBUG] python3 /home/randy/projects/petalinux_common/kr260-sdt-2024-2/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/rootfsconfigs/rootfs_config.py --generate_kconfig /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/meta-user/conf/user-rootfsconfig /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/configs/rootfsconfigs
+2026-02-02 00:25:57,067 - [DEBUG] 
 
 
 
-2026-01-04 21:41:55,634 - [DEBUG] LOPPER_DTC_FLAGS="-b 0 -@" /opt/PetaLinux/sysroots/x86_64-petalinux-linux/usr/bin/lopper -O /home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/configs -f --enhanced   -i /opt/PetaLinux/sysroots/x86_64-petalinux-linux/usr/lib/python3.12/site-packages/lopper/lops/lop-xilinx-id-cpus.dts /home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/hw-description/system-top.dts 
-2026-01-04 21:41:56,701 - [DEBUG] 
-# global core_number no-domain cpu_name
-arm,cortex-a53 0 None psu_cortexa53_0 None
-arm,cortex-a53 1 None psu_cortexa53_1 None
-arm,cortex-a53 2 None psu_cortexa53_2 None
-arm,cortex-a53 3 None psu_cortexa53_3 None
-arm,cortex-r5 0 None psu_cortexr5_0 None
-arm,cortex-r5 1 None psu_cortexr5_1 None
-pmu-microblaze 0 None psu_pmu_0 None
-
-
-
-2026-01-04 21:41:56,716 - [DEBUG] Hardware Configuration:
-2026-01-04 21:41:56,716 - [DEBUG] MODEL       = "ZynqMP SMK-K26 Rev2/1/B/A"
-2026-01-04 21:41:56,716 - [DEBUG] MACHINE     = "xlnx-zynqmp-smk-k26-rev2"
-2026-01-04 21:41:56,716 - [DEBUG] DEVICE_ID   = "xck26"
-2026-01-04 21:41:56,716 - [DEBUG] SOC_FAMILY  = "zynqmp"
-2026-01-04 21:41:56,716 - [DEBUG] SOC_VARIANT = "ev"
-2026-01-04 21:41:56,716 - [DEBUG] CPUs:
-2026-01-04 21:41:56,716 - [DEBUG] 	= psu_cortexa53_0 arm cortex-a53 0
-2026-01-04 21:41:56,716 - [DEBUG] 	= psu_cortexa53_1 arm cortex-a53 1
-2026-01-04 21:41:56,716 - [DEBUG] 	= psu_cortexa53_2 arm cortex-a53 2
-2026-01-04 21:41:56,716 - [DEBUG] 	= psu_cortexa53_3 arm cortex-a53 3
-2026-01-04 21:41:56,716 - [DEBUG] 	= psu_cortexr5_0 arm cortex-r5 0
-2026-01-04 21:41:56,716 - [DEBUG] 	= psu_cortexr5_1 arm cortex-r5 1
-2026-01-04 21:41:56,716 - [DEBUG] 	= psu_pmu_0 zynqmp-pmu 0
-2026-01-04 21:41:56,717 - [INFO] Silentconfig project
-2026-01-04 21:41:56,717 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/configs/config conf /home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/configs/configs/Kconfig
-2026-01-04 21:41:56,722 - [DEBUG] *
-* PetaLinux System Configuration
-*
-ZYNQMP Configuration (SYSTEM_ZYNQMP) [Y/?] y
-Subsystem Architecture (NO EDIT!)
-> 1. aarch64 (SUBSYSTEM_ARCH_AARCH64)
-  2. arm (SUBSYSTEM_ARCH_ARM)
-  3. microblaze (SUBSYSTEM_ARCH_MICROBLAZE)
-choice[1-3?]: *
-* Linux Components Selection
-*
-Image Selector (SUBSYSTEM_COMPONENT_IMG_SEL) [N/y/?] 
-u-boot
-> 1. u-boot-xlnx (SUBSYSTEM_COMPONENT_U__BOOT_NAME_U__BOOT__XLNX)
-  2. remote (SUBSYSTEM_COMPONENT_U__BOOT_NAME_REMOTE)
-  3. ext-local-src (SUBSYSTEM_COMPONENT_U__BOOT_NAME_EXT__LOCAL__SRC)
-choice[1-3]: trusted-firmware-arm
-> 1. trusted-firmware-arm (SUBSYSTEM_COMPONENT_TRUSTED__FIRMWARE__ARM_NAME_TRUSTED__FIRMWARE__ARM)
-  2. remote (SUBSYSTEM_COMPONENT_TRUSTED__FIRMWARE__ARM_NAME_REMOTE)
-  3. ext-local-src (SUBSYSTEM_COMPONENT_TRUSTED__FIRMWARE__ARM_NAME_EXT__LOCAL__SRC)
-choice[1-3]: linux-kernel
-> 1. linux-xlnx (SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_LINUX__XLNX)
-  2. remote (SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_REMOTE)
-  3. ext-local-src (SUBSYSTEM_COMPONENT_LINUX__KERNEL_NAME_EXT__LOCAL__SRC)
-choice[1-3]: *
-* Auto Config Settings
-*
-Device tree autoconfig (SUBSYSTEM_AUTOCONFIG_DEVICE__TREE) [Y/n/?] 
-Specify a manual device tree include directory (SUBSYSTEM_DEVICE_TREE_MANUAL_INCLUDE) [N/y/?] 
-*
-* Subsystem Hardware Settings
-*
-System Processor
-> 1. psu_cortexa53_0 (SUBSYSTEM_PROCESSOR_psu_cortexa53_0_SELECT)
-choice[1]: 1
-*
-* Memory Settings
-*
-Primary Memory
-> 1. psu_ddr_0 (SUBSYSTEM_MEMORY_PSU_DDR_0_SELECT)
-  2. psu_ddr_1 (SUBSYSTEM_MEMORY_PSU_DDR_1_SELECT)
-  3. manual (SUBSYSTEM_MEMORY_MANUAL_SELECT)
-choice[1-3?]: System memory base address (SUBSYSTEM_MEMORY_PSU_DDR_0_BASEADDR) [0x0] 
-System memory size (SUBSYSTEM_MEMORY_PSU_DDR_0_SIZE) [0x7ff00001] 
-u-boot text base address (SUBSYSTEM_MEMORY_PSU_DDR_0_U__BOOT_TEXTBASE_OFFSET) [0x8000000] 
-*
-* Serial Settings
-*
-PMUFW Serial stdin/stdout
-> 1. uart1 (SUBSYSTEM_PMUFW_SERIAL_UART1_SELECT)
-  2. manual (SUBSYSTEM_PMUFW_SERIAL_MANUAL_SELECT)
-choice[1-2?]: FSBL Serial stdin/stdout
-> 1. uart1 (SUBSYSTEM_FSBL_SERIAL_UART1_SELECT)
-  2. manual (SUBSYSTEM_FSBL_SERIAL_MANUAL_SELECT)
-choice[1-2?]: TF-A Serial stdin/stdout
-> 1. uart1 (SUBSYSTEM_TF-A_SERIAL_UART1_SELECT)
-  2. manual (SUBSYSTEM_TF-A_SERIAL_MANUAL_SELECT)
-choice[1-2?]: U-boot/Linux Serial stdin/stdout
-> 1. uart1 (SUBSYSTEM_SERIAL_UART1_SELECT)
-  2. manual (SUBSYSTEM_SERIAL_MANUAL_SELECT)
-choice[1-2?]: System stdin/stdout baudrate for uart1
-  1. 600 (SUBSYSTEM_SERIAL_UART1_BAUDRATE_600)
-  2. 9600 (SUBSYSTEM_SERIAL_UART1_BAUDRATE_9600)
-  3. 28800 (SUBSYSTEM_SERIAL_UART1_BAUDRATE_28800)
-> 4. 115200 (SUBSYSTEM_SERIAL_UART1_BAUDRATE_115200)
-  5. 230400 (SUBSYSTEM_SERIAL_UART1_BAUDRATE_230400)
-  6. 460800 (SUBSYSTEM_SERIAL_UART1_BAUDRATE_460800)
-  7. 921600 (SUBSYSTEM_SERIAL_UART1_BAUDRATE_921600)
-choice[1-7?]: *
-* Ethernet Settings
-*
-Primary Ethernet
-> 1. gem0 (SUBSYSTEM_ETHERNET_GEM0_SELECT)
-  2. gem1 (SUBSYSTEM_ETHERNET_GEM1_SELECT)
-  3. manual (SUBSYSTEM_ETHERNET_MANUAL_SELECT)
-choice[1-3?]: Randomise MAC address (SUBSYSTEM_ETHERNET_GEM0_MAC_AUTO) [N/y/?] 
-  Ethernet MAC address (SUBSYSTEM_ETHERNET_GEM0_MAC) [ff:ff:ff:ff:ff:ff] 
-Obtain IP address automatically (SUBSYSTEM_ETHERNET_GEM0_USE_DHCP) [Y/n/?] 
-*
-* Flash Settings
-*
-Primary Flash
-  1. qspi (SUBSYSTEM_FLASH_QSPI_SELECT)
-> 2. manual (SUBSYSTEM_FLASH_MANUAL_SELECT)
-choice[1-2?]: *
-* SD/SDIO Settings
-*
-Primary SD/SDIO
-> 1. manual (SUBSYSTEM_PRIMARY_SD_MANUAL_SELECT)
-choice[1]: 1
-*
-* DTG Settings
-*
-MACHINE_NAME (SUBSYSTEM_MACHINE_NAME) [template] 
-Device-tree workspace (SUBSYSTEM_DT_XSCT_WORKSPACE) [${PROOT}/components/plnx_workspace/device-tree] 
-DTB padding size (SUBSYSTEM_DTB_PADDING_SIZE) [0x1000] 
-Extra dts/dtsi files (SUBSYSTEM_EXTRA_DT_FILES) [${PROOT}/project-spec/dts_dir/zynqmp-sck-kr-g-revB.dtso] 
-*
-* Kernel Bootargs
-*
-generate boot args automatically (SUBSYSTEM_BOOTARGS_AUTO) [Y/n/?] 
-enable kernel earlyprintk (SUBSYSTEM_BOOTARGS_EARLYPRINTK) [Y/n/?] 
-Auto generated bootargs (NO EDIT!) (SUBSYSTEM_BOOTARGS_GENERATED) [earlycon console=ttyPS1,115200 root=/dev/ram0 rw init_fatal_sh=1 xilinx_tsn_ep.st_pcp=4 cma=900M] 
-Add extra boot args (SUBSYSTEM_EXTRA_BOOTARGS) [xilinx_tsn_ep.st_pcp=4 cma=900M ] 
-Devicetree compiler flags (SUBSYSTEM_DEVICETREE_COMPILER_FLAGS) [-@] 
-Devicetree overlay (SUBSYSTEM_DTB_OVERLAY) [N/y/?] 
-Remove PL from devicetree (SUBSYSTEM_REMOVE_PL_DTB) [N/y/?] 
-Enable xen hardware dtsi (SUBSYSTEM_ENABLE_XEN_HW_DTSI) [N/y/?] 
-Enable xen QEMU dtsi (SUBSYSTEM_ENABLE_XEN_QEMU_DTSI) [N/y/?] 
-*
-* FPGA Manager
-*
-Fpga Manager (SUBSYSTEM_FPGA_MANAGER) [N/y/?] 
-*
-* Trusted Firmware ARM (TF-A) Configuration
-*
-TF-A memory settings (SUBSYSTEM_TF-A_MEMORY_SETTINGS) [N/y/?] 
-TF-A extra compiler flags (SUBSYSTEM_TF-A_EXTRA_COMPILER_FLAGS) [] 
-TF-A debug (SUBSYSTEM_TF-A_DEBUG) [N/y/?] 
-*
-* u-boot Configuration
-*
-u-boot config target (SUBSYSTEM_UBOOT_CONFIG_TARGET) [AUTO] 
-*
-* u-boot script configuration
-*
-Append base address to image offsets (SUBSYSTEM_UBOOT_APPEND_BASEADDR) [Y/n/?] 
-Pre bootenv (SUBSYSTEM_UBOOT_PRE_BOOTENV) [] 
-*
-* JTAG/DDR image offsets
-*
-Devicetree offset (SUBSYSTEM_UBOOT_DEVICETREE_OFFSET) [0x100000] 
-Kernel offset (SUBSYSTEM_UBOOT_KERNEL_OFFSET) [0x200000] 
-Ramdisk image offset (SUBSYSTEM_UBOOT_RAMDISK_IMAGE_OFFSET) [0x4000000] 
-Fit image offset (SUBSYSTEM_UBOOT_FIT_IMAGE_OFFSET) [0x10000000] 
-Boot script offset (SUBSYSTEM_UBOOT_BOOTSCR_OFFSET) [0x20000000] 
-*
-* QSPI/OSPI image offsets
-*
-QSPI/OSPI Kernel offset (SUBSYSTEM_UBOOT_QSPI_KERNEL_OFFSET) [0xF00000] 
-QSPI/OSPI Kernel size (SUBSYSTEM_UBOOT_QSPI_KERNEL_SIZE) [0x1D00000] 
-QSPI/OSPI Ramdisk offset (SUBSYSTEM_UBOOT_QSPI_RAMDISK_OFFSET) [0x4000000] 
-QSPI/OSPI Ramdisk size (SUBSYSTEM_UBOOT_QSPI_RAMDISK_SIZE) [0x4000000] 
-QSPI/OSPI fit image offset (SUBSYSTEM_UBOOT_QSPI_FIT_IMAGE_OFFSET) [0xF40000] 
-QSPI/OSPI fit image size (SUBSYSTEM_UBOOT_QSPI_FIT_IMAGE_SIZE) [0x6400000] 
-QSPI/OSPI Boot script offset (SUBSYSTEM_UBOOT_QSPI_BOOTSCR_OFFSET) [AUTO] 
-QSPI/OSPI Boot script size (SUBSYSTEM_UBOOT_QSPI_BOOTSCR_SIZE) [AUTO] 
-*
-* NAND image offsets
-*
-NAND Kernel offset (SUBSYSTEM_UBOOT_NAND_KERNEL_OFFSET) [0x4100000] 
-NAND Kernel size (SUBSYSTEM_UBOOT_NAND_KERNEL_SIZE) [0x3200000] 
-NAND Ramdisk offset (SUBSYSTEM_UBOOT_NAND_RAMDISK_OFFSET) [0x7800000] 
-NAND Ramdisk size (SUBSYSTEM_UBOOT_NAND_RAMDISK_SIZE) [0x3200000] 
-NAND fit image offset (SUBSYSTEM_UBOOT_NAND_FIT_IMAGE_OFFSET) [0x4180000] 
-NAND fit image size (SUBSYSTEM_UBOOT_NAND_FIT_IMAGE_SIZE) [0x6400000] 
-Kernel image name (SUBSYSTEM_UBOOT_KERNEL_IMAGE) [Image] 
-Fit image name (SUBSYSTEM_UBOOT_FIT_IMAGE) [image.ub] 
-u-boot-ext-dtb (SUBSYSTEM_UBOOT_EXT_DTB) [N/y/?] 
-*
-* Linux Configuration
-*
-linux config target (SUBSYSTEM_LINUX_CONFIG_TARGET) [AUTO] 
-*
-* Image Packaging Configuration
-*
-Root filesystem type
-  1. INITRAMFS (SUBSYSTEM_ROOTFS_INITRAMFS)
-> 2. INITRD (SUBSYSTEM_ROOTFS_INITRD)
-  3. UBI/UBIFS (SUBSYSTEM_ROOTFS_UBIFS)
-  4. NFS (SUBSYSTEM_ROOTFS_NFS)
-  5. EXT4 (SD/eMMC/SATA/USB) (SUBSYSTEM_ROOTFS_EXT4)
-  6. other (SUBSYSTEM_ROOTFS_OTHER)
-choice[1-6]: RAMDISK loadaddr (SUBSYSTEM_INITRD_RAMDISK_LOADADDR) [0x0] 
-INITRAMFS/INITRD Image name (SUBSYSTEM_INITRAMFS_IMAGE_NAME) [petalinux-initramfs-image] 
-name for bootable kernel image (SUBSYSTEM_UIMAGE_NAME) [image.ub] 
-Root filesystem formats (SUBSYSTEM_RFS_FORMATS) [cpio cpio.gz cpio.gz.u-boot ext4 tar.gz] 
-Copy final images to tftpboot (SUBSYSTEM_COPY_TO_TFTPBOOT) [Y/n/?] 
-  tftpboot directory (SUBSYSTEM_TFTPBOOT_DIR) [/var/lib/tftpboot/Kria_KR260] 
-*
-* Firmware Version Configuration
-*
-Host name (SUBSYSTEM_HOSTNAME) [xilinx-kr260-starterkit-2024_2] 
-Product name (SUBSYSTEM_PRODUCT) [xilinx-kr260-starterkit-2024.2] 
-Firmware Version (SUBSYSTEM_FW_VERSION) [1.00] 
-*
-* Yocto Settings
-*
-Yocto Machine Name (YOCTO_MACHINE_NAME) [xlnx-zynqmp-smk-k26-rev2] 
-Yocto Include Machine name (YOCTO_INCLUDE_MACHINE_NAME) [] 
-Yocto Additional Overrides (YOCTO_ADD_OVERRIDES) [] 
-*
-* Multiconfig Targets
-*
-cortexa53-fsbl (YOCTO_BBMC_CORTEXA53_FSBL) [Y/n] 
-cortexa53-0-baremetal (YOCTO_BBMC_CORTEXA53_0_BAREMETAL) [N/y] 
-cortexa53-0-freertos (YOCTO_BBMC_CORTEXA53_0_FREERTOS) [N/y] 
-cortexa53-1-baremetal (YOCTO_BBMC_CORTEXA53_1_BAREMETAL) [N/y] 
-cortexa53-1-freertos (YOCTO_BBMC_CORTEXA53_1_FREERTOS) [N/y] 
-cortexa53-2-baremetal (YOCTO_BBMC_CORTEXA53_2_BAREMETAL) [N/y] 
-cortexa53-2-freertos (YOCTO_BBMC_CORTEXA53_2_FREERTOS) [N/y] 
-cortexa53-3-baremetal (YOCTO_BBMC_CORTEXA53_3_BAREMETAL) [N/y] 
-cortexa53-3-freertos (YOCTO_BBMC_CORTEXA53_3_FREERTOS) [N/y] 
-cortexr5-fsbl (YOCTO_BBMC_CORTEXR5_FSBL) [N/y] 
-cortexr5-0-baremetal (YOCTO_BBMC_CORTEXR5_0_BAREMETAL) [Y/n] 
-cortexr5-0-freertos (YOCTO_BBMC_CORTEXR5_0_FREERTOS) [N/y] 
-cortexr5-1-baremetal (YOCTO_BBMC_CORTEXR5_1_BAREMETAL) [N/y] 
-cortexr5-1-freertos (YOCTO_BBMC_CORTEXR5_1_FREERTOS) [N/y] 
-microblaze-pmu (YOCTO_BBMC_MICROBLAZE_PMU) [Y/n] 
-PetaLinux Multiconfig Deploy Directory (MC_PLNX_IMAGES_LOCATION) [${PROOT}/images/${BB_CURRENT_MC}] 
-*
-* TMPDIR Location
-*
-TMPDIR Location (TMP_DIR_LOCATION) [${PROOT}/build/tmp] 
-*
-* Devtool Workspace Location
-*
-Devtool Workspace Location (DEVTOOL_WORKSPACE_LOCATION) [${PROOT}/components/yocto/workspace] 
-PetaLinux Deploy Directory (PLNX_IMAGES_LOCATION) [${PROOT}/images/linux] 
-*
-* Parallel thread execution
-*
-Set number of bb threads (BB_NUMBER_THREADS) (YOCTO_BB_NUMBER_THREADS) [] 
-Set number of bb parse threads (BB_NUMBER_PARSE_THREADS) (YOCTO_BB_NUMBER_PARSE_THREADS) [4] 
-Set number of parallel make -j (PARALLEL_MAKE) (YOCTO_PARALLEL_MAKE) [] 
-*
-* Add pre-mirror url 
-*
-pre-mirror url path (PRE_MIRROR_URL) [https://petalinux.xilinx.com/sswreleases/rel-v${PETALINUX_VER}/downloads] 
-*
-* Local sstate feeds settings
-*
-local sstate feeds url (YOCTO_LOCAL_SSTATE_FEEDS_URL) [] 
-Enable Network sstate feeds (YOCTO_NETWORK_SSTATE_FEEDS) [Y/n/?] 
-  *
-  * Network sstate feeds URL
-  *
-  network sstate feeds url (YOCTO_NETWORK_SSTATE_FEEDS_URL) [https://petalinux.xilinx.com/sswreleases/rel-v${PETALINUX_VER}/aarch64/sstate-cache] 
-Enable BB NO NETWORK (YOCTO_BB_NO_NETWORK) [N/y/?] 
-Enable Buildtools Extended (YOCTO_BUILDTOOLS_EXTENDED) [N/y/?] 
-*
-* User Layers
-*
-user layer 0 (USER_LAYER_0) [] 
-#
-# configuration written to /home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/configs/config
-#
-2026-01-04 21:41:56,764 - [INFO] Silentconfig rootfs
-2026-01-04 21:41:56,764 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/configs/rootfs_config conf /home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/configs/rootfsconfigs/Kconfig
-2026-01-04 21:41:56,778 - [DEBUG] *
+2026-02-02 00:25:57,068 - [INFO] Silentconfig rootfs
+2026-02-02 00:25:57,068 - [DEBUG] Running CMD: yes "" | env KCONFIG_CONFIG=/home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/configs/rootfs_config conf /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/configs/rootfsconfigs/Kconfig
+2026-02-02 00:25:57,080 - [DEBUG] *
 * Configuration
 *
 *
@@ -3776,7 +3527,26 @@ Create new Groups (CREATE_NEW_GROUPS) [aie;]
 Add Users to Groups (ADD_USERS_TO_GROUPS) [petalinux:audio,video,aie,input;] 
 Add Users to Sudo users (ADD_USERS_TO_SUDOERS) [petalinux] 
 #
-# configuration written to /home/randy/projects/Kria_KR260/kr260-sdt-2024-2/project-spec/configs/rootfs_config
+# configuration written to /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/configs/rootfs_config
 #
-2026-01-04 21:41:56,787 - [INFO] Generating configuration files
-2026-01-04 21:41:56,816 - [DEBUG] Shutting down bitbake
+2026-02-02 00:25:57,085 - [INFO] Generating configuration files
+2026-02-02 00:25:57,103 - [DEBUG] No multilibs enabled.
+2026-02-02 00:25:57,103 - [DEBUG] No multilibs enabled.
+2026-02-02 00:25:57,103 - [INFO] Adding user layers
+2026-02-02 00:25:57,103 - [DEBUG] Shutting down bitbake
+2026-02-02 00:25:57,103 - [DEBUG] Adding layer: /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/meta-user
+2026-02-02 00:25:57,103 - [DEBUG] bitbake-layers -F add-layer /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/meta-user
+2026-02-02 00:25:59,155 - [DEBUG] 
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/randy/projects/petalinux_common/kr260-sdt-2024-2/build/cache/prserv.sqlite3, Address: 127.0.0.1:35641, PID: 985299
+
+
+
+2026-02-02 00:25:59,178 - [INFO] Generating machine conf file
+2026-02-02 00:25:59,185 - [INFO] Generating plnxtool conf file
+2026-02-02 00:25:59,203 - [DEBUG] python3 /home/randy/projects/petalinux_common/kr260-sdt-2024-2/components/yocto/layers/meta-xilinx/meta-xilinx-core/gen-machine-conf/gen-machine-scripts/rootfsconfigs/rootfs_config.py --update_cfg /home/randy/projects/petalinux_common/kr260-sdt-2024-2/project-spec/configs/rootfs_config /home/randy/projects/petalinux_common/kr260-sdt-2024-2/build/conf/plnxtool.conf zynqmp
+2026-02-02 00:25:59,277 - [DEBUG] 
+
+
+
+2026-02-02 00:25:59,280 - [DEBUG] Shutting down bitbake
