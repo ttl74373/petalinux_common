@@ -1,3 +1,8 @@
+### Tutorial Links
+* [KR260_PL](https://www.hackster.io/whitney-knitter/getting-started-with-the-kria-kr260-in-vivado-2022-1-33746d)
+* [KR260_PS](https://www.hackster.io/whitney-knitter/getting-started-with-the-kria-kr260-in-petalinux-2022-1-daec16)
+* [KR260_PS_SDT](https://www.hackster.io/LogicTronix/kria-kr260-petalinux-2024-2-sdt-flow-project-build-755799)
+
 ### Setup TFTP Server
 * Install tftp server
 ```
